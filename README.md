@@ -7,6 +7,7 @@ Le but de ce projet est de travailler sur une version 3D de ce jeu (ou du jeu Br
 sera considéré, situé dans le plan (Oxy) (qui est défini par l'équation z = 0).
 
 Votre programme doit afficher :
+
 • Le vecteur vitesse de la balle,
 
 • Les coordonnées de la balle après un laps de temps donné,
