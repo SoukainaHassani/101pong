@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+from sys import stderr, argv
+from math import fabs, sqrt, degrees, acos
+
+if len(argv) != 8:
+    print("Error. Please type eight values.")
+    exit(84)
+if int(argv[7]) < 0:
+    print("Error. The time shift should not be inferior to zero.")
+    exit(84)
+try:
+    x0 = float(argv[1])
+    y0 = float(argv[2])
+    z0 = float(argv[3])
+    x1 = float(argv[4])
+    y1 = float(argv[5])
+    z1 = float(argv[6])
+    n = int(argv[7])
+except ValueError:
+    print("Error.\n")
+    exit(84)
+vel_x = x1 - x0
+vel_y = y1 - y0
+vel_z = z1 - z0
+
+coor_n_x = vel_x * n + x1
+coor_n_y = vel_y * n + y1
+coor_n_z = vel_z * n + z1
+
+velocity = sqrt((vel_x * vel_x) + (vel_y * vel_y) + (vel_z * vel_z))
+
+if velocity == 0:
+    incidence = 0
+else:
+    incidence = fabs(90 - degrees(acos(vel_z / velocity)))
+
+print("The velocity vector of the ball is:")
+print("(%.2f, %.2f, %.2f)" %(vel_x, vel_y, vel_z))
+print("At time t + %d, ball coordinates will be:" %(n))
+print("(%.2f, %.2f, %.2f)" %(coor_n_x, coor_n_y, coor_n_z))
+
+if (z1 >= 0 and vel_z < 0) or (z1 < 0 and vel_z >= 0):
+    print("The incidence angle is:")
+    print("%.2f" % incidence, "degrees")
+
+else:
+    print("The ball won't reach the paddle.")
+exit (0)
+
