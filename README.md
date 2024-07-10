@@ -8,5 +8,7 @@ sera considéré, situé dans le plan (Oxy) (qui est défini par l'équation z =
 
 Votre programme doit afficher :
 • Le vecteur vitesse de la balle,
+
 • Les coordonnées de la balle après un laps de temps donné,
+
 • L'angle auquel la balle frappera la raquette (si elle la frappera réellement, à tout moment à partir de t = 0).
